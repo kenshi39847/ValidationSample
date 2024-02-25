@@ -2,7 +2,7 @@
 <html xmlns:th ="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>入力画面</title>
+<title th:text ="#{title.entry}">タイトル</title>
 </head>
 <body>
 	<form th:action="@{/calc}" method="post" th:object="${calcForm}">
@@ -11,6 +11,7 @@
 			+
 			<input type="text" th:field="*{rightNum}"> 
 		</div>
+		<button type ="submit" th;text="#{button.send}"></button>
 		<input type="submit" value="計算">
 		<!-- エラーを表示する -->
 		<ul th:if="${#fields.hasErrors('*')}">
